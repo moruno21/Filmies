@@ -4,20 +4,23 @@ CREATE DATABASE filmies;
 USE filmies;
 
 CREATE TABLE series(
-    id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY
-    title VARCHAR(100) NOT NULL,
-    description VARCHAR(255) NOT NULL,
-    photo VARCHAR(255) NOT NULL,
-    seasons NUMBER NOT NULL,
-    episodes NUMBER NOT NULL,
-    release VARCHAR(255) NOT NULL
+    id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(100),
+    description VARCHAR(255),
+    image VARCHAR(255),
+    seasons INT(11),
+    episodes INT(11),
+    date VARCHAR(100)
 );
 
 CREATE TABLE films(
-    id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY
-    title VARCHAR(100) NOT NULL,
-    description VARCHAR(255) NOT NULL,
-    photo VARCHAR(255) NOT NULL,
-    minutes NUMBER NOT NULL,
-    release VARCHAR(255) NOT NULL
+    id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(100),
+    description VARCHAR(255),
+    image VARCHAR(255),
+    minutes INT(11),
+    date VARCHAR(100)
 );
+
+DESCRIBE series;
+DESCRIBE films;
