@@ -9,7 +9,11 @@ class FilmsRoutes {
   }
 
   config(): void {
-    this.router.get('/', filmsController.films);
+    this.router.get('/', filmsController.listFilms);
+    this.router.get('/:id', filmsController.getFilm);
+    this.router.post('/', filmsController.postFilm);
+    this.router.delete('/:id', filmsController.deleteFilm);
+    this.router.put('/:id', filmsController.updateFilm);
   }
 }
 
