@@ -1,6 +1,7 @@
 import express, { Application } from 'express';
 import morgan from 'morgan';
 import cors from 'cors';
+import indexRoutes from './routes/indexRoutes';
 
 class Server {
   public app: Application;
@@ -20,7 +21,9 @@ class Server {
     this.app.use(express.json()); //Accepts and understands json format
   }
 
-  routes(): void {}
+  routes(): void {
+    this.app.use('/', indexRoutes);
+  }
 
   start(): void {
     this.app.listen(this.app.get('port'));
