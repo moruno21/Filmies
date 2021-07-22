@@ -9,7 +9,11 @@ class SeriesRoutes {
   }
 
   config(): void {
-    this.router.get('/', seriesController.series);
+    this.router.get('/', seriesController.listSeries);
+    this.router.get('/:id', seriesController.getSeries);
+    this.router.post('/', seriesController.postSeries);
+    this.router.delete('/:id', seriesController.deleteSeries);
+    this.router.put('/:id', seriesController.updateSeries);
   }
 }
 
