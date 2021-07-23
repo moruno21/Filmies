@@ -13,7 +13,6 @@ import { FilmsPageComponent } from './components/films-page/films-page.component
 
 // Services
 import { FilmsService } from './services/films.service';
-import { SeriesService } from './services/series.service';
 
 //Http module
 import { HttpClientModule, HttpStatusCode } from '@angular/common/http';
@@ -27,7 +26,7 @@ import { HttpClientModule, HttpStatusCode } from '@angular/common/http';
     FilmsPageComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
-  providers: [FilmsService, SeriesService],
+  providers: [FilmsService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

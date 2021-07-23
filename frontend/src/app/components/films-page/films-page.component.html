@@ -1,1 +1,10 @@
-<p>films-page works!</p>
+<h1 style="display: inline !important;">Films</h1>
+<a href="" class="btn btn-success btn-inline float-right m-2">Add film</a>
+
+
+<hr>
+
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    <app-film [film]="film" [index]="i" *ngFor="let film of films; let i = index"></app-film>
+</div>
