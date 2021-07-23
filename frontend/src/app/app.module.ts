@@ -8,6 +8,8 @@ import { SeriesFormComponent } from './components/series-form/series-form.compon
 import { FilmsFormComponent } from './components/films-form/films-form.component';
 import { FilmComponent } from './components/film/film.component';
 import { SeriesComponent } from './components/series/series.component';
+import { FilmsPageComponent } from './components/films-page/films-page.component';
+import { SeriesPageComponent } from './components/series-page/series-page.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { SeriesComponent } from './components/series/series.component';
     SeriesFormComponent,
     FilmsFormComponent,
     FilmComponent,
-    SeriesComponent
+    SeriesComponent,
+    FilmsPageComponent,
+    SeriesPageComponent
   ],
   imports: [
     BrowserModule,
