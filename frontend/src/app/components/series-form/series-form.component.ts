@@ -33,7 +33,6 @@ export class SeriesFormComponent implements OnInit {
         (res) => {
           this.series = res;
           this.update = true;
-          console.log(this.series);
         },
         (err) => console.log(err)
       );

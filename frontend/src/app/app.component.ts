@@ -16,8 +16,6 @@ export class AppComponent {
     //Here we check in which route are we in, just to show navbar or not
     this.router.events.subscribe((data) => {
       if (data instanceof NavigationStart) {
-        console.log(data.url);
-
         if (data.url === '/' || data.url === '/home') this.showNavbar = false;
         else this.showNavbar = true;
       }
