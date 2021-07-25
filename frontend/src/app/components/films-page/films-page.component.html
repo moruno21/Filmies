@@ -16,15 +16,15 @@
                 <p> <b> Date: </b> {{film.date}}</p>
                 <div class="row">
 
-                    <div class="col-lg-9 col-md-6">
-                        <a class="btn btn-info btn-block" (click)="editFilm(film.id)"><i class="far fa-edit"></i> Edit
-                            film</a>
+                    <div class="col-lg-6 col-md-6">
+                        <a class="btn btn-info btn-block m-1" (click)="editFilm(film.id)"><i class="far fa-edit"></i>
+                            Edit film</a>
                     </div>
 
-                    <div class="col-lg-3 col-md-6">
+                    <div class="col-lg-6 col-md-6">
                         <!-- Regreso a la misma pagina para que se borre la pelicula sin necesidad de recargar -->
-                        <a class="btn btn-danger btn-block" (click)="deleteFilm(film.id)"
-                            routerLinkActive="router-link-active"><i class="far fa-trash-alt"></i></a>
+                        <a class="btn btn-danger btn-block m-1" (click)="deleteFilm(film.id)"
+                            routerLinkActive="router-link-active"><i class="far fa-trash-alt"></i> Delete</a>
 
                     </div>
                 </div>
