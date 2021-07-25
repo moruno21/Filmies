@@ -12,7 +12,7 @@ class SeriesController {
     const { id } = req.params;
     await pool.query('SELECT * FROM series WHERE id = ?', [id], (err, result, fields) => {
       if (err) throw err;
-      if (result.length > 0) return res.json(result);
+      if (result.length > 0) return res.json(result[0]);
       res.status(404).json({ text: 'Series doesnt exists' });
     });
   }
