@@ -1,1 +1,63 @@
-<p>series-form works!</p>
+<div class="col-md-4 offset-md-2 animated fadeIn fast">
+    <div class="card">
+        <div class="card-body">
+            <form>
+                <div class="form-group">
+                    <input type="text" name="title" [(ngModel)]="series.title" placeholder="Title" class="form-control"
+                        autofocus>
+                </div>
+                <div class="form-group">
+                    <textarea name="description" [(ngModel)]="series.description" placeholder="Description" rows="5"
+                        class="form-control"></textarea>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="image" [(ngModel)]="series.image" placeholder="Image link"
+                        class="form-control" autofocus>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="minutes" [(ngModel)]="series.seasons" placeholder="Seasons"
+                        class="form-control" autofocus>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="minutes" [(ngModel)]="series.episodes" placeholder="Episodes"
+                        class="form-control" autofocus>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="date" [(ngModel)]="series.date" placeholder="Date (year)"
+                        class="form-control" autofocus>
+                </div>
+
+                <button class="btn btn-success btn-block"
+                    (click)="update == false ? postSeries() : updateSeries(series.id, series)">Save
+                    series</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-4 animated fadeIn fast">
+    <div class="card">
+        <img [src]="series.image == '' ? '/assets/no_photo.png' : series.image" class="card-img-top" alt="">
+        <div class="card-body">
+            <h5 class="card-title">{{series.title == '' ? 'Title' : series.title}}</h5>
+            <p class="card-text">{{series.description == '' ? 'Write a brief description' : series.description}}</p>
+            <p> <b> Seasons:</b> {{series.seasons}}</p>
+            <p> <b> Episodes:</b> {{series.episodes}}</p>
+
+            <p> <b> Date:</b> {{series.date}}</p>
+
+        </div>
+    </div>
+</div>
+
+
+
+<div class="col-md-4 offset-md-2 mt-4" *ngIf="done">
+    <div class="alert alert-success animated fadeIn fast" role="alert">
+        Done!
+        <a class="float-right" [routerLink]="['/series']">
+            <i class="fas fa-long-arrow-alt-left"></i>
+            Go back
+        </a>
+    </div>
+</div>

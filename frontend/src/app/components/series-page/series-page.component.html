@@ -6,24 +6,26 @@
 
 <div class="card-columns animated fadeIn fast">
 
-    <div class="col" *ngFor="let serie of series; let i = index">
+    <div class="col" *ngFor="let s of series; let i = index">
         <div class="card">
-            <img [src]="series.image == '' ? '/assets/no_photo.png' : series.image" class="card-img-top" alt="...">
+            <img [src]="s.image == '' ? '/assets/no_photo.png' : s.image" class="card-img-top" alt="...">
             <div class="card-body">
-                <h5 class="card-title">{{series.title}}</h5>
-                <p class="card-text">{{series.description}}</p>
-                <p> <b> Duration: </b>{{series.minutes}} minutes</p>
-                <p> <b> Date: </b> {{series.date}}</p>
+                <h5 class="card-title">{{s.title == '' ? 'No title provided' : s.title}}</h5>
+                <p class="card-text">{{s.description == '' ? 'No description provided' : s.description}}</p>
+                <p> <b> Seasons: </b>{{s.seasons == null ? 'Unknown' : s.seasons}}</p>
+                <p> <b> Episodes: </b>{{s.episodes == null ? 'Unknown' : s.episodes}}</p>
+                <p> <b> Date: </b> {{s.date == null ? 'Unknown' : s.date}}</p>
                 <div class="row">
 
                     <div class="col-lg-9 col-md-6">
-                        <a class="btn btn-info btn-block" (click)=""><i class="far fa-edit"></i> Edit series</a>
+                        <a class="btn btn-info btn-block" (click)="editSeries(s.id)"><i class="far fa-edit"></i> Edit
+                            series</a>
                     </div>
 
                     <div class="col-lg-3 col-md-6">
                         <!-- Regreso a la misma pagina para que se borre la pelicula sin necesidad de recargar -->
-                        <a class="btn btn-danger btn-block" (click)="" routerLinkActive="router-link-active"><i
-                                class="far fa-trash-alt"></i></a>
+                        <a class="btn btn-danger btn-block" (click)="deleteSeries(s.id)"
+                            routerLinkActive="router-link-active"><i class="far fa-trash-alt"></i></a>
 
                     </div>
                 </div>

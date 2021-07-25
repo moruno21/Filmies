@@ -33,6 +33,7 @@ export class FilmsFormComponent implements OnInit {
         (res) => {
           this.film = res;
           this.update = true;
+          console.log(this.film);
         },
         (err) => console.log(err)
       );
