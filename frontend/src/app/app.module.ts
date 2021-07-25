@@ -14,6 +14,7 @@ import { FilmsPageComponent } from './components/films-page/films-page.component
 
 // Services
 import { FilmsService } from './services/films.service';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { FilmsService } from './services/films.service';
     NavbarComponent,
     FilmsFormComponent,
     FilmsPageComponent,
+    HomeComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [FilmsService],

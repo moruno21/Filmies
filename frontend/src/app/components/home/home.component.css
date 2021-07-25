@@ -1,0 +1,13 @@
+.home-center {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.buttons-home {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  margin-top: 20px;
+  margin-inline: 10px;
+}
