@@ -19,7 +19,7 @@ export class SeriesService {
     return this.http.get(`${this.api_link}/series`);
   }
 
-  postSeries(series: series): Observable<Series> {
+  postSeries(series: Series): Observable<Series> {
     return this.http.post(`${this.api_link}/series`, series);
   }
 

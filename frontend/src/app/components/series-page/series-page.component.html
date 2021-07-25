@@ -1,1 +1,34 @@
-<p>series-page works!</p>
+<h1 style="display: inline !important;">Series</h1>
+<a href="" class="btn btn-success btn-inline float-right m-2" [routerLink]="['/series/add']"><i
+        class="fas fa-plus-circle"></i> Add series</a>
+
+<hr>
+
+<div class="card-columns animated fadeIn fast">
+
+    <div class="col" *ngFor="let serie of series; let i = index">
+        <div class="card">
+            <img [src]="series.image == '' ? '/assets/no_photo.png' : series.image" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{series.title}}</h5>
+                <p class="card-text">{{series.description}}</p>
+                <p> <b> Duration: </b>{{series.minutes}} minutes</p>
+                <p> <b> Date: </b> {{series.date}}</p>
+                <div class="row">
+
+                    <div class="col-lg-9 col-md-6">
+                        <a class="btn btn-info btn-block" (click)=""><i class="far fa-edit"></i> Edit series</a>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <!-- Regreso a la misma pagina para que se borre la pelicula sin necesidad de recargar -->
+                        <a class="btn btn-danger btn-block" (click)="" routerLinkActive="router-link-active"><i
+                                class="far fa-trash-alt"></i></a>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
