@@ -3,7 +3,7 @@ import pool from '../database';
 
 class FilmsController {
   public async listFilms(req: Request, res: Response): Promise<void> {
-    await pool.query('SELECT * FROM films', (err, result, fields) => {
+    await pool.query('SELECT * FROM films ORDER BY title ASC', (err, result, fields) => {
       if (err) throw err;
       res.json(result);
     });

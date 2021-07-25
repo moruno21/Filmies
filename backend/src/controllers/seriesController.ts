@@ -3,7 +3,7 @@ import pool from '../database';
 
 class SeriesController {
   public async listSeries(req: Request, res: Response): Promise<void> {
-    await pool.query('SELECT * FROM series', (err, result, fields) => {
+    await pool.query('SELECT * FROM series ORDER BY title ASC', (err, result, fields) => {
       if (err) throw err;
       res.json(result);
     });
