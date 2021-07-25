@@ -15,6 +15,8 @@ import { FilmsPageComponent } from './components/films-page/films-page.component
 // Services
 import { FilmsService } from './services/films.service';
 import { HomeComponent } from './components/home/home.component';
+import { SeriesFormComponent } from './components/series-form/series-form.component';
+import { SeriesPageComponent } from './components/series-page/series-page.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,8 @@ import { HomeComponent } from './components/home/home.component';
     FilmsFormComponent,
     FilmsPageComponent,
     HomeComponent,
+    SeriesFormComponent,
+    SeriesPageComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [FilmsService],
