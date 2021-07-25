@@ -11,9 +11,9 @@
             <img [src]="film.image == '' ? '/assets/no_photo.png' : film.image" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">{{film.title}}</h5>
-                <p class="card-text">{{film.description}}</p>
-                <p> <b> Duration: </b>{{film.minutes}} minutes</p>
-                <p> <b> Date: </b> {{film.date}}</p>
+                <p class="card-text">{{film.description == '' ? 'No description provided' : film.description }}</p>
+                <p> <b> Duration: </b>{{film.minutes == null ? 'Unknown' : film.minutes + ' minutes'}}</p>
+                <p> <b> Date: </b> {{film.date == null ? 'Unknown' : film.date}}</p>
                 <div class="row">
 
                     <div class="col-lg-6 col-md-6">

@@ -19,6 +19,7 @@ export class SeriesFormComponent implements OnInit {
 
   done: boolean = false;
   update: boolean = false;
+  error: boolean = false;
 
   constructor(
     private seriesService: SeriesService,
@@ -41,20 +42,30 @@ export class SeriesFormComponent implements OnInit {
 
   postSeries() {
     delete this.series.id;
-    this.seriesService.postSeries(this.series).subscribe(
-      (res) => {
-        this.done = true;
-      },
-      (err) => console.log(err)
-    );
+    if (this.series.title === '') {
+      this.error = true;
+    } else {
+      this.error = false;
+      this.seriesService.postSeries(this.series).subscribe(
+        (res) => {
+          this.done = true;
+        },
+        (err) => console.log(err)
+      );
+    }
   }
 
   updateSeries(id: any, series: Series) {
-    this.seriesService.updateSeries(id, series).subscribe(
-      (res) => {
-        this.done = true;
-      },
-      (err) => console.log(err)
-    );
+    if (series.title === '') {
+      this.error = true;
+    } else {
+      this.error = false;
+      this.seriesService.updateSeries(id, series).subscribe(
+        (res) => {
+          this.done = true;
+        },
+        (err) => console.log(err)
+      );
+    }
   }
 }

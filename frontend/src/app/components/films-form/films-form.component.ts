@@ -19,6 +19,7 @@ export class FilmsFormComponent implements OnInit {
 
   update: boolean = false;
   done: boolean = false;
+  error: boolean = false;
 
   constructor(
     private filmService: FilmsService,
@@ -41,20 +42,30 @@ export class FilmsFormComponent implements OnInit {
 
   postFilm() {
     delete this.film.id;
-    this.filmService.postFilm(this.film).subscribe(
-      (res) => {
-        this.done = true;
-      },
-      (err) => console.log(err)
-    );
+    if (this.film.title === '') {
+      this.error = true;
+    } else {
+      this.error = false;
+      this.filmService.postFilm(this.film).subscribe(
+        (res) => {
+          this.done = true;
+        },
+        (err) => console.log(err)
+      );
+    }
   }
 
   updateFilm(id: any, film: Film) {
-    this.filmService.updateFilm(id, film).subscribe(
-      (res) => {
-        this.done = true;
-      },
-      (err) => console.log(err)
-    );
+    if (film.title === '') {
+      this.error = true;
+    } else {
+      this.error = false;
+      this.filmService.updateFilm(id, film).subscribe(
+        (res) => {
+          this.done = true;
+        },
+        (err) => console.log(err)
+      );
+    }
   }
 }

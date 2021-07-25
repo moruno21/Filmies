@@ -10,7 +10,7 @@
         <div class="card">
             <img [src]="s.image == '' ? '/assets/no_photo.png' : s.image" class="card-img-top" alt="...">
             <div class="card-body">
-                <h5 class="card-title">{{s.title == '' ? 'No title provided' : s.title}}</h5>
+                <h5 class="card-title">{{s.title}}</h5>
                 <p class="card-text">{{s.description == '' ? 'No description provided' : s.description}}</p>
                 <p> <b> Seasons: </b>{{s.seasons == null ? 'Unknown' : s.seasons}}</p>
                 <p> <b> Episodes: </b>{{s.episodes == null ? 'Unknown' : s.episodes}}</p>
